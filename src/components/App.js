@@ -1,26 +1,26 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import Header from "./Header";
-import ToyForm from "./ToyForm";
-import ToyContainer from "./ToyContainer";
+import Header from './Header'
+import ToyForm from './ToyForm'
+import ToyContainer from './ToyContainer'
 
 function App() {
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false)
+  const [fetchTrigger, setFetchTrigger] = useState(false)
 
-  function handleClick() {
-    setShowForm((showForm) => !showForm);
-  }
+  const handleClick = () => setShowForm((showForm) => !showForm)
+  const handleFetchTrigger = () => setFetchTrigger(!fetchTrigger)
 
   return (
     <>
       <Header />
-      {showForm ? <ToyForm /> : null}
-      <div className="buttonContainer">
+      {showForm ? <ToyForm handleFetchTrigger={handleFetchTrigger} /> : null}
+      <div className='buttonContainer'>
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer />
+      <ToyContainer fetchTrigger={fetchTrigger} />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
