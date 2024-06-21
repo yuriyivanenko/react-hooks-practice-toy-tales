@@ -18,7 +18,7 @@ function App() {
       <div className='buttonContainer'>
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer fetchTrigger={fetchTrigger} />
+      <ToyContainer handleFetchTrigger={handleFetchTrigger} fetchTrigger={fetchTrigger} />
     </>
   )
 }

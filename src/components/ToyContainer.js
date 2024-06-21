@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ToyCard from './ToyCard'
 
-function ToyContainer({ fetchTrigger }) {
+function ToyContainer({ fetchTrigger, handleFetchTrigger }) {
   const [toysList, setToysList] = useState(null)
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function ToyContainer({ fetchTrigger }) {
   return (
     <div id='toy-collection'>
       {toysList.map((toy) => {
-        return <ToyCard key={`toy-${toy.id}`} toyInfo={toy} />
+        return <ToyCard handleFetchTrigger={handleFetchTrigger} key={`toy-${toy.id}`} toyInfo={toy} />
       })}
     </div>
   )
