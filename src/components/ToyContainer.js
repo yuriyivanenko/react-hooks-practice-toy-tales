@@ -1,10 +1,23 @@
-import React from "react";
-import ToyCard from "./ToyCard";
+import React, { useEffect, useState } from 'react'
+import ToyCard from './ToyCard'
 
 function ToyContainer() {
+  const [toysList, setToysList] = useState(null)
+  useEffect(() => {
+    fetch('http://localhost:3001/toys')
+      .then((res) => res.json())
+      .then((data) => setToysList(data))
+  }, [])
+
+  if (!toysList) return <h1>Loading...</h1>
+
   return (
-    <div id="toy-collection">{/* Render the collection of ToyCards */}</div>
-  );
+    <div id='toy-collection'>
+      {toysList.map((toy) => {
+        return <ToyCard key={`toy-${toy.id}`} toyInfo={toy} />
+      })}
+    </div>
+  )
 }
 
-export default ToyContainer;
+export default ToyContainer
