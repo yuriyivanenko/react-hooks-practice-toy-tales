@@ -51,7 +51,14 @@
     {
       "name": "Whale",
       "image": "https://www.ikea.com/us/en/images/products/blavingad-soft-toy-blue-whale__1107939_pe869237_s5.jpg?f=s",
-      "id": 9
+      "id": 9,
+      "likes": 5
+    },
+    {
+      "name": "Whale",
+      "image": "https://previews.123rf.com/images/davidtran07/davidtran071804/davidtran07180400065/99235466-messy-pile-of-dumbbells-in-a-gym-corner-on-the-floor.jpg",
+      "likes": 4,
+      "id": 10
     }
   ]
 }
